@@ -1,0 +1,26 @@
+{
+  "name": "three-react-context",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "vite ./examples",
+    "build": "vite build ./examples",
+    "test": "echo \"No test specified\"",
+    "release": "np --no-tests --no-2fa"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "three": "^0.138.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.8.6"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "./src/ThreeContext.js",
+  "exports": {
+    ".": "./src/ThreeContext.js"
+  }
+}

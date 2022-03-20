@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+}
+
+main {
+  text-align: center;
+  color: white;
+}
+
+main,
+button {
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo,
+    Monaco, Consolas, monospace;
+}
+
+button {
+  border: none;
+  background: white;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 100ms;
+}
+
+button:hover {
+  background: lightgray;
+}
+
+button:active {
+  background: darkgray;
+  transform: translateY(1px);
+}
