@@ -1,33 +1,39 @@
 html,
 body {
   margin: 0;
+  background: black;
 }
 
 main {
   text-align: center;
   color: white;
+  max-width: 720px;
+  padding: 0 1rem;
+  margin: auto;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  opacity: 0.75;
+}
+
+@media only screen and (max-width: 1280px) {
+  main {
+    padding-top: 4rem;
+  }
 }
 
 main,
 button {
-  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Ubuntu Mono", "Roboto Mono", Menlo,
-    Monaco, Consolas, monospace;
+  font-family: ui-monospace, monospace;
+  font-size: small;
 }
 
 button {
-  border: none;
-  background: white;
-  padding: 1rem 2rem;
-  font-weight: bold;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: all 100ms;
-}
-
-button:hover {
-  background: lightgray;
-}
-
-button:active {
-  background: darkgray;
-  transform: translateY(1px);
 }

@@ -13,6 +13,8 @@ import {
 import { CSS2DRenderer, CSS2DObject } from "three/examples/jsm/renderers/CSS2DRenderer";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
+import styles from "./css-renderer.module.css";
+
 export default () => {
   let renderer, cssRenderer, controls, scene, clock, camera, box, torus;
   return {
@@ -44,7 +46,7 @@ export default () => {
       const createLabel = ({ text, target }) => {
         const label = new CSS2DObject();
         label.element.textContent = text;
-        label.element.classList.add("label");
+        label.element.classList.add(styles.label);
         label.position.copy(target.position.clone());
         return label;
       };

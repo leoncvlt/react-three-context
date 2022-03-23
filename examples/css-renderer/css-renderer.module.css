@@ -1,10 +1,5 @@
-section {
-  display: flex;
-  justify-content: center;
-}
-
 .renderers,
-canvas {
+.canvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,11 +8,11 @@ canvas {
   height: 100%;
 }
 
-canvas:hover {
+.canvas:hover {
   cursor: grab;
 }
 
-canvas:active {
+.canvas:active {
   cursor: grabbing;
 }
 

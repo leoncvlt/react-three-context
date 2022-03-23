@@ -1,27 +1,25 @@
 import { ThreeProvider, useThree } from "../../src/ThreeContext";
 import threeScript from "./basic-three";
 
-import "./basic-example.css";
+import styles from "./basic-example.module.css";
 
 const Content = () => {
   const three = useThree();
   const { ThreeCanvas, changeSpeed } = three;
 
   return (
-    <section>
+    <>
       <button onClick={() => changeSpeed()}>Change Speed</button>
-      <ThreeCanvas />
-    </section>
+      <ThreeCanvas className={styles.canvas} />
+    </>
   );
 };
 
 const BasicExample = () => {
   return (
     <ThreeProvider script={threeScript}>
-      <main>
-        <p>Context / provider / hook to integrate vanilla three.js in your React app</p>
-        <Content />
-      </main>
+      <p>Basic react component → three scene communication example</p>
+      <Content />
     </ThreeProvider>
   );
 };

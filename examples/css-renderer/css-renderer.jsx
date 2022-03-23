@@ -1,16 +1,15 @@
-import { useRef } from "react/cjs/react.production.min";
 import { ThreeProvider, useThree } from "../../src/ThreeContext";
-import threeScript from "./css-example-three";
+import threeScript from "./css-renderer-three";
 
-import "./css-example.css";
+import styles from "./css-renderer.module.css";
 
 const Content = () => {
   const three = useThree();
   const { ThreeCanvas } = three;
 
   return (
-    <div className="renderers">
-      <ThreeCanvas />
+    <div className={styles.renderers}>
+      <ThreeCanvas className={styles.canvas} />
       {/* CSS renderer will be appended here */}
     </div>
   );
@@ -19,10 +18,11 @@ const Content = () => {
 const BasicExample = () => {
   return (
     <ThreeProvider script={threeScript}>
-      <main>
-        <p>Context / provider / hook to integrate vanilla three.js in your React app</p>
-        <Content />
-      </main>
+      <p>
+        CSS renderer example, instantiating a CSS canvas with absolute positioning overlapping the
+        3D one in the ThreeContext script.
+      </p>
+      <Content />
     </ThreeProvider>
   );
 };
