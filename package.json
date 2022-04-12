@@ -1,6 +1,6 @@
 {
   "name": "react-three-context",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "scripts": {
     "start": "vite ./examples",
     "build": "vite build ./examples",
