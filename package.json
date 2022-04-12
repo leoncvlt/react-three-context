@@ -1,5 +1,5 @@
 {
-  "name": "three-react-context",
+  "name": "react-three-context",
   "version": "0.2.1",
   "scripts": {
     "start": "vite ./examples",
