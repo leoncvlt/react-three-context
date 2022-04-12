@@ -19,8 +19,8 @@
   "files": [
     "src"
   ],
-  "main": "./src/ThreeContext.js",
+  "main": "./src/ThreeContext.jsx",
   "exports": {
-    ".": "./src/ThreeContext.js"
+    ".": "./src/ThreeContext.jsx"
   }
 }
