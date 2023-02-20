@@ -1,9 +1,8 @@
-import { createContext, useContext, useState, useEffect, useMemo, useCallback } from "react";
+import { createContext, useContext, useEffect, useMemo, useCallback } from "react";
 
 export const ThreeContext = createContext();
 
 export const ThreeProvider = ({ script, children, canvas, ...props }) => {
-  const [initialized, setInitialized] = useState(false);
   const three = useMemo(
     () => (!!script.prototype?.constructor ? new script() : script()),
     [script]
@@ -11,15 +10,14 @@ export const ThreeProvider = ({ script, children, canvas, ...props }) => {
 
   const threeCanvas = useCallback(async (node) => {
     if (!three?.init || !node) {
-      return null;
+      return;
     }
     await three.init({ props, canvas: node });
-    setInitialized(true);
-  });
+  }, []);
 
   useEffect(() => {
-    if (!three?.update || !initialized) {
-      return null;
+    if (!three?.update || !threeCanvas) {
+      return;
     }
 
     const update = () => {
@@ -28,7 +26,7 @@ export const ThreeProvider = ({ script, children, canvas, ...props }) => {
     };
     const loop = requestAnimationFrame(update);
     return () => cancelAnimationFrame(loop);
-  }, [threeCanvas, initialized]);
+  }, [threeCanvas]);
 
   const ThreeCanvas = (props) => <canvas {...props} ref={threeCanvas}></canvas>;
 
